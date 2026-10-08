@@ -8,6 +8,7 @@
   "plugins": [
     {
       "name": "scrimba-explain",
+      "displayName": "Explain by Scrimba",
       "source": "./",
       "description": "Explain by Scrimba — ask your agent to explain anything as an instant narrated slideshow: a concept, a document, an architecture, a codebase, a git branch or PR. Built live with animations, diagrams, maths, and code, at a shareable scrimba.com link.",
       "logo": "assets/logo.png"
