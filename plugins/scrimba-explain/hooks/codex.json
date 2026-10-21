@@ -1,0 +1,28 @@
+{
+  "description": "Offers a Scrimba explainer when the agent has changed a lot of code in a session.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$PLUGIN_ROOT/hooks/scrimba-offer.mjs\" codex",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$PLUGIN_ROOT/hooks/scrimba-offer.mjs\" codex",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "scrimba-explain",
+  "version": "0.2.0",
+  "description": "Explain by Scrimba — ask Codex to explain anything as an instant narrated slideshow: a concept, a document, an architecture, a codebase, a git branch or PR, or the changes it just made. Built live with animations, diagrams, maths, and code, at a scrimba.com link.",
+  "author": {
+    "name": "Scrimba",
+    "url": "https://scrimba.com"
+  },
+  "homepage": "https://scrimba.com",
+  "repository": "https://github.com/scrimba/explain",
+  "license": "MIT",
+  "keywords": [
+    "scrimba",
+    "explainer",
+    "video",
+    "mcp",
+    "learning",
+    "diagrams",
+    "code-walkthrough"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/codex.json",
+  "interface": {
+    "displayName": "Explain by Scrimba",
+    "shortDescription": "Narrated explainers of anything, including the changes Codex made.",
+    "longDescription": "Ask Codex to explain a concept, a document, a codebase, a PR or the changes it just made, as a narrated slideshow with code, diffs, diagrams and animations, built live at a scrimba.com link. When Codex changes a lot of code, it offers an explainer of the changes.",
+    "developerName": "Scrimba",
+    "category": "Productivity",
+    "capabilities": [
+      "MCP"
+    ],
+    "websiteURL": "https://scrimba.com",
+    "defaultPrompt": [
+      "Explain the changes you made in this session.",
+      "Explain how this codebase is structured.",
+      "Make a video walkthrough of this PR."
+    ],
+    "composerIcon": "./assets/logo.png",
+    "logo": "./assets/logo.png"
+  }
+}

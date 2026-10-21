@@ -3,7 +3,7 @@
   "name": "scrimba-explain",
   "displayName": "Explain by Scrimba",
   "icon": "./assets/logo.png",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Explain by Scrimba — ask your agent to explain anything as an instant narrated slideshow: a concept, a document, an architecture, a codebase, a git branch or PR. Built live with animations, diagrams, maths, and code, at a shareable scrimba.com link.",
   "author": {
     "name": "Scrimba",
@@ -18,5 +18,6 @@
     "learning",
     "diagrams",
     "code-walkthrough"
-  ]
+  ],
+  "hooks": "./hooks/claude-code.json"
 }
