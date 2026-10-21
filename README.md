@@ -26,7 +26,7 @@ codex plugin marketplace add scrimba/explain
 codex plugin add scrimba-explain@scrimba
 ```
 
-Then open `/hooks` in Codex and trust the two `scrimba-explain` hooks. Codex skips plugin hooks until you trust them; without them, everything works except the offers.
+Then open `/hooks` in Codex and trust the two `scrimba-explain` hooks. Codex skips plugin hooks until you trust them; without them, everything works except the offers. The first time Codex calls a Scrimba tool, it asks you to approve it.
 
 ### Other agents
 
@@ -35,12 +35,6 @@ npx skills add scrimba/explain
 ```
 
 installs the `explain` skill into OpenCode, Cursor, Copilot, Gemini CLI and many more. The skill uses the Scrimba MCP tools when the agent has them, and a small Node script in the skill's folder when it does not.
-
-```sh
-npx plugins add scrimba/explain
-```
-
-installs the plugin, with its MCP servers, into Cursor, Codex, Copilot CLI and VS Code.
 
 ### Plain MCP
 
@@ -66,6 +60,6 @@ To build an explainer, the agent sends the explainer text, including the code it
 |---|---|
 | `.claude-plugin/marketplace.json` | Claude Code marketplace |
 | `.agents/plugins/marketplace.json` | Codex marketplace |
-| `plugins/scrimba-explain/` | The plugin: Claude Code, Codex and Agent Plugins manifests, MCP servers, the `explain` skill, the `scrimba-explainer` agent and the offer hooks |
+| `plugins/scrimba-explain/` | The plugin: Claude Code and Codex manifests, MCP servers, the `explain` skill, the `scrimba-explainer` agent and the offer hooks |
 | `plugins/scrimba-explain/hooks/scrimba-offer.mjs` | The offer logic, shared by the Claude Code and Codex hooks |
 | `plugins/scrimba-explain/skills/explain/scripts/scrimba.mjs` | Starts, appends to and finishes an explainer over HTTP, for agents without the MCP tools |
