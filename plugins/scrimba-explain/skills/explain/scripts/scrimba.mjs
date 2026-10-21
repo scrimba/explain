@@ -3,9 +3,9 @@
 // a shell but not the Scrimba MCP tools, or that must keep the explainer
 // contract out of their own context.
 //
-//   node scrimba.mjs start  --endpoint changes|explain --title "…" --description "…" [--mode landscape]
-//   node scrimba.mjs push   --endpoint changes|explain --token <stream_token>   (markup on stdin)
-//   node scrimba.mjs finish --endpoint changes|explain --token <stream_token> --guide <guide>
+//   node scrimba.mjs start  --endpoint code|explain --title "…" --description "…" [--mode landscape]
+//   node scrimba.mjs push   --endpoint code|explain --token <stream_token>   (markup on stdin)
+//   node scrimba.mjs finish --endpoint code|explain --token <stream_token> --guide <guide>
 //
 // `start` writes the explainer markup contract to a file and prints JSON with
 // the explainer link, the stream token, the guide id and the contract file.
@@ -15,7 +15,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs"
 import { tmpdir } from "node:os"
 import { join } from "node:path"
 
-const PATHS = { changes: "/explain/changes/mcp", explain: "/mcp/explain" }
+const PATHS = { code: "/mcp/code", explain: "/mcp/explain" }
 
 function options(argv) {
 	const opts = {}
@@ -27,8 +27,8 @@ function options(argv) {
 
 const [command, ...rest] = process.argv.slice(2)
 const opts = options(rest)
-const path = PATHS[opts.endpoint ?? "changes"]
-if (!path) fail(`Unknown endpoint ${opts.endpoint}; use changes or explain.`)
+const path = PATHS[opts.endpoint ?? "explain"]
+if (!path) fail(`Unknown endpoint ${opts.endpoint}; use code or explain.`)
 const url = (process.env.SCRIMBA_EXPLAIN_ORIGIN || "https://scrimba.com").replace(/\/+$/, "") + path
 
 let session = null
@@ -79,5 +79,5 @@ if (command === "start") {
 	if (opts.guide) args.guide = opts.guide
 	process.stdout.write(JSON.stringify(await call("finish_explainer_stream", args), null, 2) + "\n")
 } else {
-	fail("Usage: scrimba.mjs start|push|finish --endpoint changes|explain …")
+	fail("Usage: scrimba.mjs start|push|finish --endpoint code|explain …")
 }

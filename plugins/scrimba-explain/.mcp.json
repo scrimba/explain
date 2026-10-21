@@ -4,9 +4,9 @@
       "type": "http",
       "url": "https://scrimba.com/mcp/explain"
     },
-    "scrimba-explain-changes": {
+    "scrimba-code": {
       "type": "http",
-      "url": "https://scrimba.com/explain/changes/mcp"
+      "url": "https://scrimba.com/mcp/code"
     }
   }
 }

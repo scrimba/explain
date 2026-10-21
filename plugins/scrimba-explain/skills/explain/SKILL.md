@@ -15,7 +15,7 @@ Scrimba Explain turns anything into a rich explainer with narration and visual a
 
 ## The tools
 
-Use the Scrimba MCP tools when you have them: `start_explainer_stream`, `append_explainer_chunk` and `finish_explainer_stream`, plus `create_playlist` for a playlist or course. The `scrimba-explain` server explains anything; the `scrimba-explain-changes` server explains code changes.
+Use the Scrimba MCP tools when you have them: `start_explainer_stream`, `append_explainer_chunk` and `finish_explainer_stream`, plus `create_playlist` for a playlist or course. The `scrimba-explain` server explains anything; the `scrimba-code` server explains code changes.
 
 Without the MCP tools, use `scripts/scrimba.mjs` in this skill's folder. It needs Node and network access:
 
@@ -27,7 +27,7 @@ SCRIMBA_EOF
 node scripts/scrimba.mjs finish --endpoint explain --token <stream_token> --guide <guide>
 ```
 
-`start` prints the link, the stream token, the guide id and the path of a file that holds the explainer markup contract. Use `--endpoint changes` for an explainer of code changes.
+`start` prints the link, the stream token, the guide id and the path of a file that holds the explainer markup contract. Use `--endpoint code` for an explainer of code changes.
 
 ## Explain anything
 
@@ -42,9 +42,9 @@ For a playlist or course of lessons, use `create_playlist`: you plan the curricu
 Use this when the user asks for an explainer of the changes you made in this session, or accepts the offer of one.
 
 1. Write a brief, for yourself or for the agent that writes the explainer: what the user asked for and why, in their words where you can; what you changed and how the parts connect, with the main decisions and the alternatives you rejected; what you are unsure of, did not test, or the user should check; and what to diff against (the commit before your first change, or the working tree).
-2. Start a stream on the changes endpoint:
-   - In Claude Code, run `node "<this skill's folder>/scripts/scrimba.mjs" start --endpoint changes --title "…" --description "…"`, so that the contract goes to a file and not into this conversation.
-   - Elsewhere, call `start_explainer_stream` on the `scrimba-explain-changes` server.
+2. Start a stream on the code endpoint:
+   - In Claude Code, run `node "<this skill's folder>/scripts/scrimba.mjs" start --endpoint code --title "…" --description "…"`, so that the contract goes to a file and not into this conversation.
+   - Elsewhere, call `start_explainer_stream` on the `scrimba-code` server.
 3. Give the user the link: they open it, sign in to Scrimba, and claim the explainer to watch it.
 4. In Claude Code, start the `scrimba-explainer` agent in the background. Give it the brief, the stream token, the guide id, the contract file path and this skill's folder, and end your turn. Elsewhere, write the explainer yourself, with "Writing the explainer" below.
 
