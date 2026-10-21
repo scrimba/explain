@@ -3,6 +3,10 @@
     "scrimba-explain": {
       "type": "http",
       "url": "https://scrimba.com/mcp/explain"
+    },
+    "scrimba-explain-changes": {
+      "type": "http",
+      "url": "https://scrimba.com/explain/changes/mcp"
     }
   }
 }

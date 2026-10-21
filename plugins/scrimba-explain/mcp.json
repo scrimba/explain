@@ -4,6 +4,10 @@
     "scrimba-explain": {
       "type": "streamable-http",
       "url": "https://scrimba.com/mcp/explain"
+    },
+    "scrimba-explain-changes": {
+      "type": "streamable-http",
+      "url": "https://scrimba.com/explain/changes/mcp"
     }
   }
 }

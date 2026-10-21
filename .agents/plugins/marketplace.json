@@ -1,0 +1,20 @@
+{
+  "name": "scrimba",
+  "interface": {
+    "displayName": "Scrimba"
+  },
+  "plugins": [
+    {
+      "name": "scrimba-explain",
+      "source": {
+        "source": "local",
+        "path": "./plugins/scrimba-explain"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
